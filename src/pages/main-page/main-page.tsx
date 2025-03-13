@@ -2,20 +2,26 @@ import React, { JSX } from "react";
 import ReactDOM from "react-dom/client";
 import CitiesCard from "../../components/cities-card/cities-card";
 import { Logo } from "../../components/logo/logo";
+import { OffersList } from "../../types/offer";
+import { CitiesCardList } from "../../components/CitiesCardList/citiesCardList";
 
 type MainPageProps = {
   rentalOffersCount: number;
+  offersList: OffersList[];
 };
 
-function MainPage({ rentalOffersCount }: MainPageProps): JSX.Element {
+function MainPage({ rentalOffersCount, offersList }: MainPageProps): JSX.Element {
   return (
     <div>
       <div className="page page--gray page--main">
+        {/* <Helmet>
+          <title>Шесть городов</title>
+        </Helmet> */}
         <header className="header">
           <div className="container">
             <div className="header__wrapper">
               <div className="header__left">
-                <Logo/>
+                <Logo />
               </div>
               <nav className="header__nav">
                 <ul className="header__nav-list">
@@ -84,7 +90,9 @@ function MainPage({ rentalOffersCount }: MainPageProps): JSX.Element {
             <div className="cities__places-container container">
               <section className="cities__places places">
                 <h2 className="visually-hidden">Places</h2>
-                <b className="places__found">{rentalOffersCount} places to stay in Amsterdam</b>
+                <b className="places__found">
+                  {rentalOffersCount} places to stay in Amsterdam
+                </b>
                 <form className="places__sorting" action="#" method="get">
                   <span className="places__sorting-caption">Sort by</span>
                   <span className="places__sorting-type" tabIndex={0}>
@@ -111,14 +119,8 @@ function MainPage({ rentalOffersCount }: MainPageProps): JSX.Element {
                     </li>
                   </ul>
                 </form>
-                <div className="cities__places-list places__list tabs__content">
-                  {/* удалила код карточек предложений. Они теперь в файле components/cities-card/cities-card.tsx */}
-                  <CitiesCard />
-                  <CitiesCard />
-                  <CitiesCard />
-                  <CitiesCard />
-                  <CitiesCard />
-                </div>
+                <CitiesCardList offersList={offersList}/>
+
               </section>
               <div className="cities__right-section">
                 <section className="cities__map map"></section>

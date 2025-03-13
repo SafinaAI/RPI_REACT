@@ -5,7 +5,7 @@ function Logo() {
     <Link to="/" className="header__logo header__logo-link--activate">
       <img
         className="header__logo"
-        src="img/logo.svg"
+        src="../public/img/logo.svg"
         alt="6 cities logo"
         width="81"
         height="41"
