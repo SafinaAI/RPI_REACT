@@ -1,7 +1,21 @@
 import React, { JSX, useState } from "react";
-import ReactDOM from "react-dom/client";
 
-function commentSubmissionForm(): JSX.Element {
+function CommentSubmissionForm(): JSX.Element {
+  const [formData, setFormData] = useState({
+    rating: "",
+    review: "",
+  });
+
+  const handleInputChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = event.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
   return (
     <form className="reviews__form form" action="#" method="post">
       <label className="reviews__label form__label" htmlFor="review">
@@ -16,6 +30,8 @@ function commentSubmissionForm(): JSX.Element {
               value={rating}
               id={`${rating}-stars`}
               type="radio"
+              checked={formData.rating === rating.toString()}
+              onChange={handleInputChange}
             />
             <label
               htmlFor={`${rating}-stars`}
@@ -44,6 +60,8 @@ function commentSubmissionForm(): JSX.Element {
         id="review"
         name="review"
         placeholder="Tell how was your stay, what you like and what can be improved"
+        value={formData.review}
+        onChange={handleInputChange}
       ></textarea>
       <div className="reviews__button-wrapper">
         <p className="reviews__help">
@@ -54,7 +72,7 @@ function commentSubmissionForm(): JSX.Element {
         <button
           className="reviews__submit form__submit button"
           type="submit"
-          disabled
+          disabled={!formData.rating || formData.review.length < 50}
         >
           Submit
         </button>
@@ -62,4 +80,5 @@ function commentSubmissionForm(): JSX.Element {
     </form>
   );
 }
-export default commentSubmissionForm;
+
+export default CommentSubmissionForm;

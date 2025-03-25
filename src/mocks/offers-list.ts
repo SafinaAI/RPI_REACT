@@ -1,3 +1,5 @@
+
+
 import { OffersList } from "../types/offer";
 
 export const offersList: OffersList[] = [
@@ -92,6 +94,98 @@ export const offersList: OffersList[] = [
     isFavorite: false,
     isPrimium: true,
     rating: 4.4,
+  },
+  {
+    id: "5",
+    title: "Wooo and store place",
+    type: "apartment",
+    price: 160,
+    previewImage: "../public/img/apartament-premium-Brussels_01.jpg",
+    city: {
+      name: "Amsterdam",
+      location: {
+        latitude: 52.3909553943508,
+        longitude: 4.85309666406198,
+        zoom: 13,
+      },
+    },
+    location: {
+      latitude: 52.3909553943508,
+        longitude: 4.85309666406198,
+      zoom: 16,
+    },
+    isFavorite: false,
+    isPrimium: false,
+    rating: 4.4,
+  },
+  {
+    id: "6",
+    title: "Wooo and store place",
+    type: "apartment",
+    price: 160,
+    previewImage: "../public/img/apartament-premium-Brussels_01.jpg",
+    city: {
+      name: "Amsterdam",
+      location: {
+        latitude: 52.360955394350,
+        longitude: 4.85309666406198,
+        zoom: 13,
+      },
+    },
+    location: {
+      latitude: 52.360955394350,
+        longitude: 4.85309666406198,
+      zoom: 16,
+    },
+    isFavorite: false,
+    isPrimium: true,
+    rating: 4.4,
+  },
+  {
+    id: "7",
+    title: "Лучшее место в Амстердаме",
+    type: "apartment",
+    price: 160,
+    previewImage: "../public/img/apartament-premium-Brussels_01.jpg",
+    city: {
+      name: "Amsterdam",
+      location: {
+        latitude: 52.3909553943508,
+        longitude: 4.929309666406198,
+        zoom: 13,
+      },
+    },
+    location: {
+      latitude: 52.3909553943508,
+        longitude: 4.929309666406198,
+      zoom: 16,
+    },
+    isFavorite: false,
+    isPrimium: true,
+    rating: 4.4,
+  },
+  {
+    id: "8",
+    title: "Лучшее место в Амстердаме",
+    type: "apartment",
+    price: 160,
+    previewImage: "../public/img/apartament-premium-Brussels_01.jpg",
+    city: {
+      name: "Amsterdam",
+      location: {
+        latitude: 52.3809553943508,
+        longitude: 4.939309666406198,
+        zoom: 13,
+      },
+    },
+    location: {
+      latitude: 52.3809553943508,
+        longitude: 4.939309666406198,
+      zoom: 16,
+    },
+    isFavorite: false,
+    isPrimium: true,
+    rating: 4.9,
   },
 
 ];

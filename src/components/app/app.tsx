@@ -46,7 +46,7 @@ function App({
         />
         <Route
           path={`${AppRoute.Offer}/:id`}
-          element={<OfferPage offers={offers} />}
+          element={<OfferPage offers={offers} offersList={offersList} />}
         />
         <Route path="*" element={<Error404Page />} />
       </Routes>

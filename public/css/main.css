@@ -475,12 +475,11 @@ img {
   background-image: url(../img/avatar.svg);
   background-size: 100%;
   background-repeat: no-repeat;
- 
 }
 .user__avatar {
   border-radius: 50%;
-  width: 75px;
-  height: 75px;
+  width: 55px;
+  height: 55px;
 }
 .rating__stars {
   position: relative;
@@ -599,7 +598,7 @@ img {
   width: 100%;
   -ms-flex-item-align: stretch;
   align-self: stretch;
-  background-image: url(../img/map.jpg);
+  /* background-image: url(../img/map.jpg); */
   background-size: 682px auto;
   background-repeat: no-repeat;
   background-position: -170px center;
@@ -1321,10 +1320,12 @@ img {
   margin-bottom: 55px;
 }
 .offer__map {
-  width: 100%;
-  height: 579px;
-  margin-bottom: 50px;
-  background-image: url(../img/map-big.jpg);
+  width: 70%;
+  height: 279px;
+  margin-bottom: 55px;
+  margin-top: 20px;
+  margin-left: 360px;
+  /* background-image: url(../img/map-big.jpg); */
   background-repeat: no-repeat;
   background-size: 1144px auto;
   background-position: center top;
@@ -1333,7 +1334,7 @@ img {
   (min-resolution: 144dpi),
   (min-resolution: 1.5dppx) {
   .offer__map {
-    background-image: url(../img/map-big@2x.jpg);
+    /* background-image: url(../img/map-big@2x.jpg); */
     background-size: 1144px auto;
   }
 }
@@ -1778,3 +1779,51 @@ img {
   opacity: 0.5;
 }
 /*# sourceMappingURL=main.css.map */
+
+/* MAP */
+.cities__map {
+  min-height: 500px;
+}
+
+.cities__map .list {
+  display: flex;
+  list-style: none;
+}
+
+.cities__map .list__item {
+  cursor: pointer;
+}
+
+.cities__map .list__item:hover {
+  color: orangered;
+}
+
+.cities__map .list__item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.offer__map {
+  /* margin-left: 120px; */
+  min-height: 500px;
+  width: 1300px;
+  /* border: 3px solid  #ccc; */
+}
+
+.offer__map .list {
+  display: flex;
+  list-style: none;
+}
+
+.offer__map .list__item {
+  cursor: pointer;
+}
+
+.offer__map .list__item:hover {
+  color: orangered;
+}
+
+.offer__map .list__item:not(:last-child) {
+  margin-right: 20px;
+}
+
+/* ___________ */
