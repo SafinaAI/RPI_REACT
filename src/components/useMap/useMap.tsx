@@ -2,12 +2,6 @@ import { useEffect, useState, useRef, MutableRefObject } from 'react';
 import leaflet, { Map } from 'leaflet';
 import { City } from '../../types/map';
 
-// interface City {
-//   lat: number;
-//   lng: number;
-//   zoom: number;
-// }
-
 type UseMapProps ={
     city: City;
     mapRef: React.RefObject<HTMLDivElement | null>; 

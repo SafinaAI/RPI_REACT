@@ -6,7 +6,7 @@ type OfferLocation = {
 };
 
 // CityOffer - описывает город и его координаты
-type CityOffer = {
+export type CityOffer = {
     name: string;
     location: OfferLocation;
 };

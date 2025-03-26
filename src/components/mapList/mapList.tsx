@@ -1,15 +1,6 @@
 import React, { JSX } from 'react';
 import { Points } from '../../types/map';
 
-// interface Point {
-//   title: string;
-// }
-
-// interface ListProps {
-//   points: Point[];
-//   onListItemHover: (title: string) => void;
-// }
-
 type MapListProps ={
     points: Points[];
     onListItemHover: (title: string) => void; 
@@ -39,5 +30,4 @@ function MapList({points,onListItemHover}: MapListProps): JSX.Element {
       }</ul>
     );
   }
-  
   export default MapList;

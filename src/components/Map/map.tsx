@@ -5,14 +5,12 @@ import useMap from "../useMap/useMap";
 import { URL_MARKER_DEFAULT, URL_MARKER_CURRENT } from "../../const";
 import { City, Points } from '../../types/map';
 
-
 type MapProps = {
     city: City;
     points: Points[];
     selectedPoint: Points | null;
   
   }
-  
   
   function Map({city, points,selectedPoint}:MapProps) : JSX.Element {
     const mapRef = useRef<HTMLDivElement >(null);
@@ -29,11 +27,17 @@ type MapProps = {
           iconSize: [40, 40],
           iconAnchor: [20, 40],
         });
-  
+
         useEffect(() => {
+          
           if (map) {
-            
-            points.map((item) => {
+            map.eachLayer((layer) => {
+              if (layer instanceof leaflet.Marker) {
+                map.removeLayer(layer);
+              }
+            });
+        
+            points.forEach((item) => {
               leaflet
                 .marker(
                   {
@@ -50,7 +54,7 @@ type MapProps = {
                 .addTo(map);
             });
           }
-        }, [map, points, selectedPoint,currentCustomIcon,defaultCustomIcon]);
+        }, [map, points, selectedPoint, currentCustomIcon, defaultCustomIcon]);       
   
       return (
         <div
@@ -59,6 +63,5 @@ type MapProps = {
         >
         </div>
       );
-    }
-    
+    }    
     export default Map;

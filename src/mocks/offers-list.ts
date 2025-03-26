@@ -13,13 +13,13 @@ export const offersList: OffersList[] = [
       name: "Paris",
       location: {
         latitude: 48.8546,
-        longitude: 2.5673,
+        longitude: 2.3488,
         zoom: 13,
       },
     },
     location: {
       latitude: 48.8546,
-      longitude: 2.5673,
+        longitude: 2.3488,
       zoom: 16,
     },
     isFavorite: true,
@@ -58,14 +58,14 @@ export const offersList: OffersList[] = [
     city: {
       name: "Humburg",
       location: {
-        latitude: 68.8546,
-        longitude: 6.5673,
+        latitude: 53.5753,
+        longitude: 10.0153,
         zoom: 13,
       },
     },
     location: {
-      latitude: 68.8546,
-      longitude: 6.5673,
+      latitude: 53.5753,
+        longitude: 10.0153,
       zoom: 16,
     },
     isFavorite: false,
@@ -81,14 +81,14 @@ export const offersList: OffersList[] = [
     city: {
       name: "Brussels",
       location: {
-        latitude: 18.8546,
-        longitude: 8.5673,
+        latitude: 50.8504,
+        longitude: 4.3487,
         zoom: 13,
       },
     },
     location: {
-      latitude: 18.8546,
-      longitude: 8.5673,
+      latitude: 50.8504,
+        longitude: 4.3487,
       zoom: 16,
     },
     isFavorite: false,
@@ -96,10 +96,33 @@ export const offersList: OffersList[] = [
     rating: 4.4,
   },
   {
+    id: "4a",
+    title: "Wooo and store place",
+    type: "apartment",
+    price: 180,
+    previewImage: "../public/img/apartament-premium-Brussels_03.jpg",
+    city: {
+      name: "Brussels",
+      location: {
+        latitude: 50.8704,
+        longitude: 4.3687,
+        zoom: 13,
+      },
+    },
+    location: {
+      latitude: 50.8704,
+        longitude: 4.3687,
+      zoom: 16,
+    },
+    isFavorite: true,
+    isPrimium: true,
+    rating: 4.6,
+  },
+  {
     id: "5",
     title: "Wooo and store place",
     type: "apartment",
-    price: 160,
+    price: 180,
     previewImage: "../public/img/apartament-premium-Brussels_01.jpg",
     city: {
       name: "Amsterdam",
@@ -122,7 +145,7 @@ export const offersList: OffersList[] = [
     id: "6",
     title: "Wooo and store place",
     type: "apartment",
-    price: 160,
+    price: 150,
     previewImage: "../public/img/apartament-premium-Brussels_01.jpg",
     city: {
       name: "Amsterdam",
@@ -145,7 +168,7 @@ export const offersList: OffersList[] = [
     id: "7",
     title: "Лучшее место в Амстердаме",
     type: "apartment",
-    price: 160,
+    price: 130,
     previewImage: "../public/img/apartament-premium-Brussels_01.jpg",
     city: {
       name: "Amsterdam",
@@ -168,7 +191,7 @@ export const offersList: OffersList[] = [
     id: "8",
     title: "Лучшее место в Амстердаме",
     type: "apartment",
-    price: 160,
+    price: 260,
     previewImage: "../public/img/apartament-premium-Brussels_01.jpg",
     city: {
       name: "Amsterdam",
