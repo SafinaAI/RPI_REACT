@@ -1,15 +1,27 @@
 // Компонент должен отрисовывать все карточки с предложениями аренды с помощью компонента «Карточка предложения». Все необходимые данные компонент принимает через props.
 
+import { BlockName } from "../../const";
 import { OffersList } from "../../types/offer";
-import CitiesCard from "../cities-card/cities-card";
+import {CitiesCard} from "../cities-card/cities-card";
 
 type CitiesCardListProps = {
   offersList: OffersList[];
+  onListItemHover?: (offerId: string) => void;
+  block: string;
+  
 };
 
-function CitiesCardList({ offersList }: CitiesCardListProps) {
+function CitiesCardList({  block,
+  offersList,
+  onListItemHover, }: CitiesCardListProps) {
   return (
-    <div className="cities__places-list places__list tabs__content">
+    <div
+    className={`${
+      block.includes('cities')
+        ? BlockName.AllPagesList
+        : BlockName.NearOfferList
+    } places__list`}
+  >
       {Array.from(offersList, (item) => (
         <CitiesCard
           key={item.id}
@@ -18,8 +30,11 @@ function CitiesCardList({ offersList }: CitiesCardListProps) {
           type={item.type}
           price={item.price}
           previewImage={item.previewImage}
-          isPrimium={item.isPrimium}
+          isPremium={item.isPrimium}
+          isFavorite={item.isFavorite}
           rating={item.rating}
+          block={block}
+          onListItemHover={onListItemHover}
         />
       ))}
     </div>

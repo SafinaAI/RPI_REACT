@@ -2,15 +2,19 @@ import React, { JSX, useState } from "react";
 import ReactDOM from "react-dom/client";
 import { Link } from "react-router-dom";
 import { AppRoute } from "../../const";
+import { MouseEvent } from "react";
 
 type CitiesCardProps = {
   id: string;
   title: string;
   type: string;
   price: number;
-  isPrimium: boolean;
+  isPremium: boolean;
+  isFavorite: boolean;
   previewImage: string;
   rating: number;
+  onListItemHover?: (offerId: string) => void;
+  block: string;
 };
 
 function CitiesCard({
@@ -18,11 +22,36 @@ function CitiesCard({
   title,
   type,
   price,
-  isPrimium,
   previewImage,
+  isPremium,
+  isFavorite,
   rating,
+  block,
+  onListItemHover,
 }: CitiesCardProps) {
   const [, setOfferId] = useState("");
+  const [isFavoriteOffer, setIsFavoriteOffer] = useState(isFavorite);
+  const handleButtonClick = () => {
+    setIsFavoriteOffer((prev) => !prev);
+  };
+
+  const handleCityCardOver = (event: MouseEvent<HTMLLIElement>) => {
+    if (onListItemHover === undefined) {
+      return;
+    }
+    event.preventDefault();
+    setOfferId(id);
+    onListItemHover(id);
+  };
+
+  const handleCityCardOut = (event: MouseEvent<HTMLLIElement>) => {
+    if (onListItemHover === undefined) {
+      return;
+    }
+    event.preventDefault();
+    setOfferId('');
+    onListItemHover('');
+  };
   return (
     <div>
       {
@@ -32,7 +61,7 @@ function CitiesCard({
           onMouseOut={() => setOfferId("")}
         >
           <div className="placecard__mark-">
-            <span>{isPrimium}</span>
+            <span>{isPremium}</span>
           </div>
           <div className="cities__image-wrapper place-card__image-wrapper">
             <Link to={`${AppRoute.Offer}/${id}`}>
@@ -81,4 +110,4 @@ function CitiesCard({
     </div>
   );
 }
-export default CitiesCard;
+export { CitiesCard };

@@ -51,3 +51,8 @@ export type OffersList = {
     rating: number;
     previewImage: string;
 };
+
+export type FavoritesStatusData = {
+    id: string;
+    isFavorite: boolean;
+  };

@@ -15,13 +15,13 @@ const offers: FullOffer[] = [
       location: {
         latitude: 48.8546,
         longitude: 2.3488,
-        zoom: 13,
+        zoom: 9,
       },
     },
     location: {
       latitude: 48.8546,
         longitude: 2.3488,
-      zoom: 16,
+      zoom: 9,
     },
     isFavorite: true,
     isPrimium: true,
@@ -62,13 +62,13 @@ const offers: FullOffer[] = [
       location: {
         latitude: 28.8546,
         longitude: 4.5673,
-        zoom: 13,
+        zoom: 9,
       },
     },
     location: {
       latitude: 28.8546,
       longitude: 4.5673,
-      zoom: 16,
+      zoom: 9,
     },
     isFavorite: false,
     isPrimium: true,
@@ -111,13 +111,13 @@ const offers: FullOffer[] = [
       location: {
         latitude: 53.5753,
         longitude: 10.0153,
-        zoom: 13,
+        zoom: 9,
       },
     },
     location: {
       latitude: 53.5753,
         longitude: 10.0153,
-      zoom: 16,
+      zoom: 9,
     },
     isFavorite: false,
     isPrimium: true,
@@ -160,13 +160,13 @@ const offers: FullOffer[] = [
       location: {
         latitude: 50.8504,
         longitude: 4.3487,
-        zoom: 13,
+        zoom: 9,
       },
     },
     location: {
       latitude: 50.8504,
         longitude: 4.3487,
-      zoom: 16,
+      zoom: 9,
     },
     isFavorite: false,
     isPrimium: true,
@@ -209,13 +209,13 @@ const offers: FullOffer[] = [
       location: {
         latitude: 50.8704,
         longitude: 4.3687,
-        zoom: 13,
+        zoom: 9,
       },
     },
     location: {
       latitude: 50.8704,
         longitude: 4.3687,
-      zoom: 16,
+      zoom: 9,
     },
     isFavorite: true,
     isPrimium: true,
@@ -258,13 +258,13 @@ const offers: FullOffer[] = [
       location: {
         latitude: 52.3909553943508,
         longitude: 4.85309666406198,
-        zoom: 13,
+        zoom: 9,
       },
     },
     location: {
       latitude: 52.3909553943508,
         longitude: 4.85309666406198,
-      zoom: 16,
+      zoom: 9,
     },
     isFavorite: false,
     isPrimium: false,
@@ -295,7 +295,7 @@ const offers: FullOffer[] = [
       "../public/img/apartament-premium-Brussels_04.jpg",
     ],
     maxAdults: 3,
-    previewImage: "../public/img/apartament-premium-Paris_03.jpg",
+    previewImage: "../public/img/apartament-premium-Brussels_01.jpg",
   },
   {
     id: "6",
@@ -307,13 +307,13 @@ const offers: FullOffer[] = [
       location: {
         latitude: 52.360955394350,
         longitude: 4.85309666406198,
-        zoom: 13,
+        zoom: 9,
       },
     },
     location: {
       latitude: 52.360955394350,
         longitude: 4.85309666406198,
-      zoom: 16,
+      zoom: 9,
     },
     isFavorite: false,
     isPrimium: true,
@@ -344,7 +344,7 @@ const offers: FullOffer[] = [
       "../public/img/apartament-premium-Brussels_04.jpg",
     ],
     maxAdults: 6,
-    previewImage: "../public/img/apartament-premium-Paris_03.jpg",
+    previewImage: "../public/img/apartament-premium-Humburg_01.jpg",
   },
   {
     id: "7",
@@ -356,13 +356,13 @@ const offers: FullOffer[] = [
       location: {
         latitude: 52.3909553943508,
         longitude: 4.929309666406198,
-        zoom: 13,
+        zoom: 9,
       },
     },
     location: {
       latitude: 52.3909553943508,
         longitude: 4.929309666406198,
-      zoom: 16,
+      zoom: 9,
     },
     isFavorite: false,
     isPrimium: true,
@@ -393,7 +393,7 @@ const offers: FullOffer[] = [
       "../public/img/apartament-premium-Brussels_04.jpg",
     ],
     maxAdults: 6,
-    previewImage: "../public/img/apartament-premium-Paris_03.jpg",
+    previewImage: "../public/img/apartament-premium-Madrid_04.jpg",
   },
   {
     id: "8",
@@ -405,13 +405,13 @@ const offers: FullOffer[] = [
       location: {
         latitude: 52.3809553943508,
         longitude: 4.939309666406198,
-        zoom: 13,
+        zoom: 9,
       },
     },
     location: {
       latitude: 52.3809553943508,
         longitude: 4.939309666406198,
-      zoom: 16,
+      zoom: 9,
     },
     isFavorite: false,
     isPrimium: true,
@@ -442,7 +442,7 @@ const offers: FullOffer[] = [
       "../public/img/apartament-premium-Brussels_04.jpg",
     ],
     maxAdults: 4,
-    previewImage: "../public/img/apartament-premium-Paris_03.jpg",
+    previewImage: "../public/img/apartament-premium-Humburg_02.jpg",
   },
 ];
 export { offers };

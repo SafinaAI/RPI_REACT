@@ -1,6 +1,8 @@
 import React, { JSX, useState } from "react";
+import { useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import Error404Page from "../error404-page/error404-page";
+import { AuthorizationStatus, BlockName } from "../../const";
 import { Logo } from "../../components/logo/logo";
 import { FullOffer, OffersList } from "../../types/offer";
 // import OffersList from '../../mocks/offers-list';
@@ -10,12 +12,13 @@ import CommentSubmissionForm from "../../components/commentSubmissionForm/commen
 import ReviewsList from "../../components/reviews-list/reviews-list";
 import { reviews } from "../../mocks/reviews";
 import { CitiesCardList } from "../../components/CitiesCardList/citiesCardList";
-import Map from "../../components/Map/map";
+import { Map } from "../../components/Map/map";
 import { CITY } from "../../mocks/city";
 import { POINTS } from "../../mocks/points";
 import { Points } from "../../types/map";
 import List from "../../components/mapList/mapList";
 import MapList from "../../components/mapList/mapList";
+import { useAppDispatch, useAppSelector } from "../../hooks";
 
 type OfferProps = {
   offers: FullOffer[];
@@ -35,6 +38,7 @@ function OfferPage({ offers, offersList }: OfferProps): JSX.Element {
 
   // Найдем три объявления рядом (например, просто возьмем первые три из списка)
   const nearbyOffers = offers.slice(5, 8);
+
   if (!offer) {
     return <Error404Page />;
   }
@@ -185,14 +189,16 @@ function OfferPage({ offers, offersList }: OfferProps): JSX.Element {
                 </h2>
                 <ReviewsList reviews={reviews} />
               </section>
-              {/* <Offer/> */}
               <CommentSubmissionForm />
             </div>
           </div>
           <section className="offer__map map">
-            <h1>Парки города {CITY.title}:</h1>
-            <MapList points={POINTS} onListItemHover={handleListItemHover} />
-            <Map city={CITY} points={POINTS} selectedPoint={selectedPoint} />
+            <Map
+              block={BlockName.Offer}
+              city={offer.city}
+              offers={nearbyOffers}
+              currentOffer={offer}
+            />
           </section>
         </section>
         <div className="container">
@@ -200,13 +206,10 @@ function OfferPage({ offers, offersList }: OfferProps): JSX.Element {
             <h2 className="near-places__title">
               Other places in the neighbourhood
             </h2>
-            {/* <OffersList
-          offers={nearbyOffers}
-          listClass="near-places__list places__list"
-          cardClass="near-places__card place-card"
-          imageWrapperClass="near-places__image-wrapper place-card__image-wrapper"
-        /> */}
-            <CitiesCardList offersList={nearbyOffers} />
+            <CitiesCardList
+              block={BlockName.NearOffer}
+              offersList={nearbyOffers}
+            />
           </section>
         </div>
       </main>

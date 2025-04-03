@@ -1,10 +1,10 @@
-import React, { JSX, useState } from "react";
+import React, { JSX, useCallback, useState } from "react";
 import { Link } from "react-router-dom";
-import CitiesCard from "../../components/cities-card/cities-card";
+import {CitiesCard} from "../../components/cities-card/cities-card";
 import { Logo } from "../../components/logo/logo";
 import { OffersList } from "../../types/offer";
 import { CitiesCardList } from "../../components/CitiesCardList/citiesCardList";
-import Map from "../../components/Map/map";
+import {Map} from "../../components/Map/map";
 import { CITY } from "../../mocks/city";
 import { POINTS } from "../../mocks/points";
 import { Points } from "../../types/map";
@@ -14,7 +14,8 @@ import { CitiesList } from "../../components/citiesList/сitiesList";
 import { SortOffer } from "../../types/sort";
 import { SortOptions } from "../../components/sort-options/sort-options";
 import { sortOffersByType } from "../../utils";
-import { BlockName } from '../../types/blockName'; // Убедитесь, что путь правильный
+// import { BlockName } from '../../types/blockName'; // Убедитесь, что путь правильный
+import { BlockName } from '../../const';
 
 
 //Временная функция для фильтрации предложений по городу
@@ -46,15 +47,22 @@ function MainPage({
   const offersLists = useAppSelector((state) => state.offers);
   const selectedCityOffers = getOfferByCity(selectedCity?.name, offersList);
   const cityRentalOffersCount = selectedCityOffers.length;
+  const city = selectedCityOffers[0]?.city;
 
   const [selectedOffer, setSelectedOffer] = useState<OffersList | undefined>(
     undefined
   );
 
-  const handleOfferHover = (offerId: string) => {
-    const currentOffer = offersLists.find((offer) => offer.id === offerId);
+  // const handleOfferHover = (offerId: string) => {
+  //   const currentOffer = offersLists.find((offer) => offer.id === offerId);
+  //   setSelectedOffer(currentOffer);
+  // };
+
+  const handleListItemHover = useCallback((offerId: string) => {
+    const currentOffer = offersList.find((offer) => offer.id === offerId);
+
     setSelectedOffer(currentOffer);
-  };
+  }, [offersList]);
 
   const [activeSort, setActiveSort] = useState<SortOffer>("Popular");
 
@@ -109,19 +117,21 @@ function MainPage({
                 activeSorting={activeSort}
                 onChange={(newSorting) => setActiveSort(newSorting)}
               />
-              <CitiesCardList block={BlockName.AllPages} offersList={sortOffersByType(selectedCityOffers, activeSort)}
-              onListItemHover={handleOfferHover} />
+              {/* <CitiesCardList block={BlockName.AllPages} offersList={sortOffersByType(selectedCityOffers, activeSort)}  onListItemHover={handleListItemHover} 
+              onListItemHover={handleOfferHover} /> */}
+              <CitiesCardList block={BlockName.AllPages} offersList={selectedCityOffers} onListItemHover={handleListItemHover} />
+
             </section>
             <div className="cities__right-section">
               <section className="cities__map">
-                <h2>Парки города {CITY.title}:</h2>
-                <MapList points={POINTS} onListItemHover={handlePointHover} />
+                {/* <h2>Парки города {CITY.title}:</h2>
+                <MapList points={POINTS} onListItemHover={handlePointHover} /> */}
                 {/* <Map
                   city={CITY}
                   points={POINTS}
                   selectedPoint={selectedPoint}
                 /> */}
-                <Map
+                {/* <Map
                   city={selectedCity?.location || CITY}
                   points={selectedCityOffers.map((offer) => ({
                     title: offer.title,
@@ -129,7 +139,9 @@ function MainPage({
                     lng: offer.location.longitude,
                   }))}
                   selectedPoint={selectedPoint}
-                />
+                /> */}
+              <Map block={BlockName.AllPages} city={city} offers={selectedCityOffers} selectedOffer={selectedOffer} />
+
               </section>
             </div>
           </div>

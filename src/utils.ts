@@ -20,7 +20,7 @@ export { getCity, sortOffersByType };
 //     }
 // }
 
-function sortOffersByType(offers: OffersList[], type: SortOffer): OffersList[] {
+function sortOffersByType(offers: OffersList[], offersDefault: unknown, activeSortOffersType: string, type: SortOffer): OffersList[] {
     const sortedOffers = [...offers]; // Создаем копию массива перед сортировкой
     switch(type) {
       case SortOffersType.PriceToHight:

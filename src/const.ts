@@ -25,12 +25,26 @@ const AuthorizationStatus = {
   Unknown: "UNKNOWN",
 };
 
-export { AppRoute, AuthorizationStatus };
+const BlockName = {
+  AllPages: "cities",
+  AllPagesList: "cities__places-list",
+  Offer: "offer",
+  NearOfferList: "near-places__list",
+  NearOffer: "near-places",
+} as const;
 
-export const URL_MARKER_DEFAULT =
+const NameSpace = {
+  User: "USER",
+  Offers: "OFFERS",
+  Review: "REVIEW",
+} as const;
+
+// export { AppRoute, AuthorizationStatus, };
+
+const URL_MARKER_DEFAULT =
   "https://assets.htmlacademy.ru/content/intensive/javascript-1/demo/interactive-map/pin.svg";
 
-export const URL_MARKER_CURRENT =
+const URL_MARKER_CURRENT =
   "https://assets.htmlacademy.ru/content/intensive/javascript-1/demo/interactive-map/main-pin.svg";
 
 const CITIES_LOCATION: CityOffer[] = [
@@ -83,12 +97,51 @@ const CITIES_LOCATION: CityOffer[] = [
     },
   },
 ];
-export { CITIES_LOCATION };
+// export { CITIES_LOCATION };
 
 const SortOffersType = {
-  Popular: 'Popular',
-  PriceToHight: 'Price: low to high',
-  PriceToLow: 'Price: high to low',
-  TopRated: 'Top rated first',
+  Popular: "Popular",
+  PriceToHight: "Price: low to high",
+  PriceToLow: "Price: high to low",
+  TopRated: "Top rated first",
 };
-export {SortOffersType}
+// export { SortOffersType, BlockName, NameSpace };
+
+const STARTS_COUNT = 5;
+
+const MIN_COMMENT_LENGTH = 50;
+
+const MAX_COMMENT_LENGTH = 300;
+
+const MIN_RATING = 0;
+
+const MAX_RATING = 5;
+
+const DISPLAYED_COMMENTS = 10;
+
+const APIRoute = {
+  Offers: "/offers",
+  Login: "/login",
+  Logout: "/logout",
+  Comments: "/comments",
+  NeabyOffers: "/nearby",
+  FavoriteOffers: "/favorite",
+} as const;
+
+export {
+  AppRoute,
+  AuthorizationStatus,
+  URL_MARKER_DEFAULT,
+  URL_MARKER_CURRENT,
+  BlockName,
+  STARTS_COUNT,
+  CITIES_LOCATION,
+  SortOffersType,
+  APIRoute,
+  MIN_COMMENT_LENGTH,
+  MAX_COMMENT_LENGTH,
+  MIN_RATING,
+  MAX_RATING,
+  NameSpace,
+  DISPLAYED_COMMENTS,
+};
